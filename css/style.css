@@ -727,6 +727,18 @@ button {
   border: 1px solid var(--border);
 }
 
+/* Mobile only: force a fixed 2-column x 6-row grid for the 12 skill items.
+   Desktop/tablet keep the existing auto-fill layout above untouched. */
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-item {
+    padding: 1.1rem 1rem;
+  }
+}
+
 .skill-item {
   background: var(--surface);
   padding: 1.4rem 1.5rem;
