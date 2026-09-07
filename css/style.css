@@ -1141,3 +1141,16 @@ button {
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+/* Mobile only: the Previous/Next project labels (e.g. "Previous: Autonomous
+   Ground Vehicle") are long enough that .btn's default white-space: nowrap
+   pushes them wider than a phone viewport, causing horizontal overflow.
+   Let the label wrap inside the button on narrow screens; desktop/tablet
+   sizes above this breakpoint are unaffected. */
+@media (max-width: 640px) {
+  .project-footer-nav .btn {
+    white-space: normal;
+    text-align: center;
+    flex: 1 1 100%;
+  }
+}
