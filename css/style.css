@@ -716,6 +716,17 @@ button {
   .photo-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* .photo-slot's base min-height: 160px conflicts with the 4:3 aspect-ratio
+     set above: aspect-ratio derives a minimum width from that height floor
+     (~213px per slot) regardless of how narrow the grid column actually is,
+     which was forcing the 2-column gallery — and the content column that
+     shares its grid track — wider than the phone viewport. aspect-ratio
+     alone already sizes these slots correctly, so the height floor is
+     redundant here and only needs to be removed at this breakpoint. */
+  .photo-gallery .photo-slot {
+    min-height: 0;
+  }
 }
 
 /* -------------------------- Skills -------------------------- */
